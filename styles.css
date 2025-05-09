@@ -1,0 +1,185 @@
+/* Estilos generales para toda la página */
+body {
+    font-family: 'Orbitron', sans-serif; /* Fuente estilo digital/espacial */
+    background-color: #0f0f1a; /* Fondo oscuro para contraste */
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(5, 5, 20, 0.8) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(30, 10, 50, 0.6) 0%, transparent 20%);
+    overflow: hidden;
+}
+
+/* Contenedor principal */
+.container {
+    text-align: center;
+    background-color: rgba(15, 15, 30, 0.8);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 100, 255, 0.3);
+    border: 1px solid rgba(0, 150, 255, 0.2);
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    z-index: 1;
+}
+
+/* Estilo para el título */
+h1 {
+    color: #4fc3f7;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 10px rgba(79, 195, 247, 0.5);
+    letter-spacing: 2px;
+}
+
+/* Display del temporizador */
+.timer-display {
+    font-size: 5rem;
+    font-weight: bold;
+    color: #ff4081;
+    margin: 1rem 0;
+    text-shadow: 0 0 15px rgba(255, 64, 129, 0.7);
+    letter-spacing: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Contenedor de botones */
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+/* Estilo base para botones */
+.btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    outline: none;
+}
+
+/* Botón de Iniciar */
+.start {
+    background-color: #00c853;
+    color: white;
+}
+
+.start:hover {
+    background-color: #00e676;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 200, 83, 0.3);
+}
+
+/* Botón de Pausar */
+.pause {
+    background-color: #ffab00;
+    color: white;
+}
+
+.pause:hover {
+    background-color: #ffc400;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(255, 171, 0, 0.3);
+}
+
+/* Botón de Reiniciar */
+.reset {
+    background-color: #d50000;
+    color: white;
+}
+
+.reset:hover {
+    background-color: #ff1744;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(213, 0, 0, 0.3);
+}
+
+/* Mensaje de despegue (inicialmente oculto) */
+.launch-message {
+    margin-top: 2rem;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.5s ease;
+    position: absolute;
+    width: 100%;
+    left: 0;
+}
+
+/* Cuando el mensaje está visible */
+.launch-message.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Estilo para el texto DESPEGUE */
+.launch-message h2 {
+    color: #ffeb3b;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 20px rgba(255, 235, 59, 0.8);
+    animation: pulse 1.5s infinite;
+}
+
+/* Imagen del cohete */
+.rocket {
+    width: 150px;
+    height: auto;
+    margin-top: 1rem;
+    transition: all 0.5s ease;
+    filter: drop-shadow(0 0 15px rgba(255, 235, 59, 0.8));
+}
+
+/* Animación para el cohete cuando aparece */
+.launch-message.show .rocket {
+    animation: takeOff 2s forwards;
+}
+
+/* Animación de pulso para el texto */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Animación de despegue para el cohete */
+@keyframes takeOff {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-50px) rotate(-5deg); }
+    100% { transform: translateY(-500px) rotate(-10deg); opacity: 0; }
+}
+
+/* Efecto de parpadeo cuando el temporizador llega a los últimos 5 segundos */
+.blink {
+    animation: blink 0.5s infinite alternate;
+}
+
+@keyframes blink {
+    from { opacity: 1; }
+    to { opacity: 0.5; }
+}
+
+/* Estrellas de fondo (efecto decorativo) */
+.star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    animation: twinkle var(--duration) infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 1; }
+}

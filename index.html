@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temporizador</title>
+    <!-- Enlace al archivo CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Fuente de Google para un estilo más moderno -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Título principal -->
+        <h1>¡ATENCION VAMOS A CONTAR!</h1>
+        
+        <!-- Display del temporizador -->
+        <div class="timer-display" id="timer">60</div>
+        
+        <!-- Controles del temporizador -->
+        <div class="controls">
+            <button id="startBtn" class="btn start">Iniciar</button>
+            <button id="pauseBtn" class="btn pause" disabled>Pausar</button>
+            <button id="resetBtn" class="btn reset">Reiniciar</button>
+        </div>
+        
+        <!-- Mensaje de despegue (oculto inicialmente) -->
+        <div id="launchMessage" class="launch-message">
+            <h2>¡DESPEGUE!</h2>
+            <img src="cohete.png" alt="Cohete despegando" class="rocket">
+        </div>
+    </div>
+
+    <!-- Enlace al archivo JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
